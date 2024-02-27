@@ -15,8 +15,10 @@ export class S3Bucket extends Construct {
         super(scope, id);
 
         this.bucket = new Bucket(scope, 'Bucket-S3', {
+
             // When the stack is deleted, the bucket should be destroyed
             removalPolicy: RemovalPolicy.DESTROY,
+            publicReadAccess: true,
         });
     }
 }
